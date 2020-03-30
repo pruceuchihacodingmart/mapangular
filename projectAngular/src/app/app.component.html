@@ -1,0 +1,34 @@
+<div style="display: flex;justify-content: space-between;">
+  <div>
+    <h2 style="text-align: center;">THE WORLD OF ENCYCLOPEDIA</h2>
+  </div>
+  <!-- <div *ngIf="user">
+    <img src="{{ user.photoUrl }}" />
+    <div>
+      <h4>{{ user.name }}</h4>
+      <p>{{ user.email }}</p>
+    </div>
+  </div> -->
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+      >
+        Login
+      </button>
+      <button
+        mat-menu-item
+        [routerLink]="['/signup']"
+        routerLinkActive="router-link-active"
+      >
+        Signup
+      </button>
+      <button *ngIf="user" mat-menu-item (click)="signOut()">signout</button>
+    </mat-menu>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

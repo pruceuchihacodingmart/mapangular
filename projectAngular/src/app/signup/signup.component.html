@@ -1,0 +1,57 @@
+<div class="boxmodel">
+  <div>
+    <h1>SIGN ME UP</h1>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          [(ngModel)]="newuser.username"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="username"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [(ngModel)]="newuser.password"
+          [ngModelOptions]="{ standalone: true }"
+          type="password"
+          placeholder="password"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>RePassword</mat-label>
+        <input
+          matInput
+          [(ngModel)]="newuser.repassword"
+          [ngModelOptions]="{ standalone: true }"
+          type="password"
+          placeholder="re type the password"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          [(ngModel)]="newuser.email"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </mat-form-field>
+      <div class="example-button-row">
+        <button (click)="onsubmit()" mat-raised-button color="accent">SignUP</button>
+        <button
+          mat-button
+          [routerLink]="['/login']"
+          routerLinkActive="router-link-active"
+        >
+          Old User?
+        </button>
+      </div>
+    </form>
+    
+  </div>
+</div>

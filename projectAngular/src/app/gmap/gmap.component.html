@@ -1,0 +1,80 @@
+<mat-card  class="maincard">
+  <mat-card class="subcard">
+    <input class="box" [(ngModel)]="from" placeholder="pinpoint FROM location" />
+    <button class="btnsub" (click)="settag('FROM')">submit</button>
+  </mat-card>
+  <br />
+  <mat-card class="subcard">
+    <input class="box" [(ngModel)]="to" placeholder="pinpoint TO location" />
+    <button class="btnsub" (click)="settag('TO')">submit</button>
+  </mat-card>
+  <br />
+  <mat-card class="subcard">
+    <input class="box" [(ngModel)]="persons" placeholder="No of persons" />
+    <button class="btnsub" (click)="settag('TO')">submit</button>
+    <button class="btncalc" (click)="calcdist()">Calculate</button>
+  </mat-card>
+  <br />
+  <div></div>
+  <br>
+</mat-card>
+
+<div class="mapbox">
+  <mat-card class="maincard" *ngIf="availableways">
+    <div class="arides">
+      <h3 *ngIf="valcalculated">Distance between Two CO-Ordinates is {{ dist }}</h3>
+      <div class="carddetails">
+        <h2>Available ways</h2>
+      </div>
+      <div class="carddetails">
+        <mat-card class="subcard">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">directions_walk</mat-icon> 
+        </mat-card>
+      </div>
+      <div class="carddetails" *ngIf="bikeavailable">
+        <mat-card class="subcard">
+          <img src="https://olawebcdn.com/images/v1/cabs/sl/ic_bike@2x.png" alt="">
+          <p>Price to travel:{{bikeprice}}$</p>
+        </mat-card>
+      </div>
+      <div class="carddetails">
+        <mat-card class="subcard" *ngIf="autoavailable">
+          <img src="https://olawebcdn.com/images/v1/cabs/sl/ic_auto@2x.png" alt="">
+          <p>Price to travel:{{autoprice}}$</p>
+        </mat-card>
+      </div>
+      <div class="carddetails">
+        <div>
+          <mat-card class="subcard" *ngIf="caravailable">
+            <img src="https://olawebcdn.com/images/v1/cabs/sl/ic_prime@2x.png" alt=""> 
+            <p>Price to travel:{{carprice}}$</p>
+          </mat-card>
+        </div>
+      </div>
+      <div class="carddetails">
+        <mat-card class="subcard" *ngIf="busavailable">
+          <p>Price to travel:{{busprice}}$</p>
+          <mat-icon aria-hidden="false" aria-label="Example home icon">directions_bus</mat-icon> 
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+  <div class="mapboxsub">
+    <agm-map
+      [latitude]="latitude"
+      [longitude]="longitude"
+      (mapClick)="onChoseLocation($event)"
+    >
+      <agm-marker
+        [latitude]="latitude"
+        [longitude]="longitude"
+        *ngIf="locationChosen"
+      ></agm-marker>
+      <agm-marker
+        [latitude]="fromlat"
+        [longitude]="fromlong"
+        *ngIf="locationChosen"
+      ></agm-marker>
+    </agm-map>
+  </div>
+</div>

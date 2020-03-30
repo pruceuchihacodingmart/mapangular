@@ -1,0 +1,64 @@
+agm-map {
+  height: 319px ;
+}
+.maincard {
+  width: 95%;
+  background-color: rgba(116, 197, 116, 0.897);
+}
+.subcard {
+  background-color: rgb(109, 2, 109);
+}
+.box {
+  margin: 10px;
+  width: 70%;
+  height: 50%;
+  border-radius: 2%;
+}
+mat-icon {
+  font-size: 250%;
+  margin: 20px;
+  margin-bottom: 0;
+  left: -22px;
+  position: relative;
+}
+
+mat-card {
+  width: 100%;
+  margin-bottom: 3px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.btnsub {
+  height: 80%;
+  color: black;
+  border-color: rgb(226, 43, 52);
+  background-color: rgb(28, 165, 245);
+  border-radius: 20%;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.btnsub:hover {
+  cursor: pointer;
+}
+.mapbox {
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  width: 25%;
+}
+
+.mapboxsub {
+  width: 98%
+}
+
+.btncalc {
+  height: 80%;
+  color: black;
+  border-color: rgb(226, 43, 52);
+  background-color: rgb(28, 165, 245);
+  border-radius: 20%;
+  margin: 10px;
+  cursor: pointer;
+}
